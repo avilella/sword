@@ -7,6 +7,14 @@ git clone https://github.com/jvmf1/sword
 cd sword
 sudo make install
 ```
+
+If installation method above fails, you can manually do:
+
+```
+cc -Wall -Wextra -Werror sword.c -c
+cc -lslib sword.o -o sword -l:libslib.so
+```
+
 # usage
 ```
 usage: sword [flags] <word>, tries to find similar words in a file
