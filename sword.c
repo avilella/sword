@@ -208,8 +208,10 @@ int main(int argc, char **argv) {
 		if (casesensitive == false)
 			sl_str_tolower(w);
 
-		if (levenshtein_distance(w, word, minimum) <= minimum)
-			printf("%s\n", w->data);
+                size_t dist;
+                dist = levenshtein_distance(w, word, minimum);
+                if (dist <= minimum)
+                    printf("%s\t%lu\n", w->data, dist);
 
 		if (status == 1)
 			break;
